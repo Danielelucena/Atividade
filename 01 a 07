@@ -1,0 +1,20 @@
+-- 01)
+-- select nome_funcionario from funcionario where sigla_depto = (select sigla_depto from departamento where nome_depto like "Recursos Humanos");
+
+-- 02)
+ -- select nome_funcionario from funcionario where sigla_depto in (SELECT sigla_depto from departamento where sigla_depto in( "HR","MKT"));
+
+-- 03)
+-- select nome_depto, (select sum(salario) as total_salario from funcionario) from departamento;
+
+-- 04)
+-- select nome_funcionario, (SELECT AVG(salario) AS salario_maiorMedia FROM funcionario) from funcionario where sigla_depto = "IT";
+
+-- 05)
+-- select nome_depto, (select count(qtdfuncionariosdepto) from departamento) from departamento ;
+
+-- 06)
+-- select nome_funcionario, (SELECT AVG(salario) AS salario_maiorMedia FROM funcionario) from funcionario where sigla_depto = "HR";
+
+-- 07)
+-- SELECT nome_depto,(select group_concat(nome_funcionario)from funcionario) FROM departamento;
